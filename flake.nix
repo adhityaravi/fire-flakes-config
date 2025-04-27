@@ -1,8 +1,8 @@
 {
-  description = "Personal configuration flakes for fire-flakes";
+  description = "Personal configuration files for fire-flake";
 
   outputs = { self, ... }: {
-    fireFlakesConfig = {
+    fireFlakeConfig = {
       paths = {
         vars = ./vars;
         secrets = ./secrets;

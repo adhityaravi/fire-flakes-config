@@ -3,9 +3,7 @@
 </h1><br>
 
 
-Welcome to the `fire-flakes-config` template repository! 🔥❄️
-
-This repository provides a **starter template** for creating your own personal configuration repository for use with [fire-flakes](https://github.com/adhityaravi/fire-flakes).
+This repository provides a **starter template** for creating your own personal configuration repository for use with [fire-flake](https://github.com/adhityaravi/fire-flake).
 
 > ✨ **Note**: This project is in an **early design phase**. Features, structure, and best practices may continue to evolve in a breaking way.
 
@@ -15,21 +13,21 @@ This repository provides a **starter template** for creating your own personal c
 
 - Store **personal variables** (e.g., names, preferences, system configurations) in the `vars/` folder.
 - Manage **private secrets** (e.g., API keys, passwords, tokens) in the `secrets/` folder.
-- Allow each user to create a **private Fire-Flakes config repo**, without modifying the main Fire-Flakes codebase.
+- Allow each user to create a **private fire-flake-config repo**, without modifying the main fire-flake codebase.
 - Enable clean separation between public and private data.
-- Make it easy to update, manage, and sync your configuration as fire-flakes evolves.
+- Make it easy to update, manage, and sync your configuration as fire-flake evolves.
 
 ## Structure
 
 ```bash
-fire-flakes-config/
+fire-flake-config/
 ├── flake.nix       # Defines the configuration flake
 ├── vars/           # Personal, non-sensitive configuration files (as Nix files)
 ├── secrets/        # Private, sensitive configuration files
 └── .gitignore      # Ensures secrets and build artifacts are not committed
 ```
 
-> **Important:** The folder structure inside `vars/` and `secrets/` **must mirror** the `fire-flakes` folder structure in the [fire-flakes](https://github.com/adhityaravi/fire-flakes) repository. This is essential for consistency, interoperability, and proper functioning.
+> **Important:** The folder structure inside `vars/` and `secrets/` **must mirror** the `fire-flake` folder structure in the [fire-flake](https://github.com/adhityaravi/fire-flake/tree/main/fire-flake) repository. This is essential for consistency, interoperability, and proper functioning.
 
 ### flake.nix
 
@@ -37,10 +35,10 @@ This file defines the configuration outputs:
 
 ```nix
 {
-  description = "Personal configuration flakes for fire-flakes";
+  description = "Personal configuration files for fire-flake";
 
   outputs = { self, ... }: {
-    fireFlakesConfig = {
+    fireFlakeConfig = {
       paths = {
         vars = ./vars;
         secrets = ./secrets;
@@ -62,14 +60,14 @@ You are encouraged to customize the `owner` and `version` fields for your own re
 1. **Create a new private repository** by using this repo as a template (GitHub allows "Use this template").
 2. Modify/add files under `vars/` to define your personal data.
 3. Modify/add files under `secrets/` carefully (recommended to encrypt or manage safely).
-4. Ensure your folder structure inside `vars/` and `secrets/` matches the `fire-flakes` repo.
+4. Ensure your folder structure inside `vars/` and `secrets/` matches the `fire-flake` repo.
 5. Update `flake.nix` if needed (e.g., change `owner` or paths).
-6. Point your [fire-flakes](https://github.com/adhityaravi/fire-flakes) configuration to use your private `fire-flakes-config` as an input flake.
+6. Point your [fire-flake](https://github.com/adhityaravi/fire-flake) configuration to use your private `fire-flake-config` as an input flake.
 
-Example snippet in your `fire-flakes` repo:
+Example snippet in your `fire-flake` repo:
 
 ```nix
-inputs.fire-flakes-config.url = "github:<your-username>/<your-private-fire-flakes-config>";
+inputs.fire-flake-config.url = "github:<your-username>/<your-private-fire-flake-config>";
 ```
 
 ## Best Practices
@@ -77,7 +75,7 @@ inputs.fire-flakes-config.url = "github:<your-username>/<your-private-fire-flake
 - **Keep `secrets/` private.** It's strongly recommended to not commit sensitive data unless encrypted.
 - **Use a .gitignore** (already provided) to prevent accidental leaks.
 - **Use structured Nix files** under `vars/` for easier compatibility and readability.
-- **Maintain strict folder structure alignment** with the `fire-flakes` repo.
+- **Maintain strict folder structure alignment** with the `fire-flake` repo.
 - **Version and document your changes** to your configuration to keep track over time.
 
 ## Future Plans
@@ -85,7 +83,7 @@ inputs.fire-flakes-config.url = "github:<your-username>/<your-private-fire-flake
 - Support optional encryption for secrets (e.g., via [sops-nix](https://github.com/Mic92/sops-nix)).
 - Introduce schema validation for vars and secrets.
 - Expand metadata capabilities.
-- Provide additional examples and guides as Fire-Flakes matures.
+- Provide additional examples and guides as fire-flake matures.
 
 ## License
 
@@ -94,7 +92,7 @@ This template repository itself is **unlicensed**, intended for personal and pri
 
 ---
 
-# ✨ Happy hacking with Fire-Flakes! 🔥❄️
+# ✨ Happy hacking with fire-flake! 🔥❄️
 
 ---
 
