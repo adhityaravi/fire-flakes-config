@@ -1,0 +1,35 @@
+# --- General ---
+*.swp
+*.swo
+*.bak
+*.tmp
+*~
+
+.DS_Store
+Thumbs.db
+
+# --- Editor/IDE folders ---
+.vscode/
+.idea/
+*.code-workspace
+
+# --- Nix-specific ---
+/result
+/result-*
+/nix-shell-result
+/nix
+*.drv
+*.out
+*.gcno
+*.gcda
+
+# --- System files ---
+.nfs*
+
+# --- fire-flakes-config-specific ---
+
+# --- Env-specific ---
+.env
+.envrc
+.direnv/
+.cache/
