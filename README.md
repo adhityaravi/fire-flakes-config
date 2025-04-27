@@ -1,6 +1,6 @@
-
-
----
+<h1 align="center">
+  <img src="https://github.com/user-attachments/assets/7a022103-d3ec-4077-9f05-4e9be7ab2e64" width="400">
+</h1><br>
 
 Welcome to the `fire-flakes-config` template repository! 🔥❄️
 
